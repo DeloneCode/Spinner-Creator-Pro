@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-panel: hsl(var(--panel));
+  --color-panel-border: hsl(var(--panel-border));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+}
+
+:root {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  
+  --panel: 0 0% 7%;
+  --panel-border: 0 0% 15%;
+  
+  --primary: 250 100% 65%;
+  --primary-foreground: 0 0% 100%;
+  
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 60%;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-panel-border);
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/30;
+  }
+}
+
+/* Custom Scrollbar for the Code Block & Panels */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+}
+
+/* Subtle dot grid pattern for the preview area */
+.bg-dot-pattern {
+  background-image: radial-gradient(hsl(var(--muted-foreground) / 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom styling to make syntax highlighted code look beautiful */
+.token-property { color: #82AAFF; }
+.token-value { color: #C3E88D; }
+.token-unit { color: #F78C6C; }
+.token-punctuation { color: #89DDFF; }
+.token-selector { color: #FFCB6B; }

@@ -1,0 +1,12 @@
+packages:
+  "framer-motion": "For smooth page transitions, hover states, and segmented control active background animations."
+  "clsx": "For conditional class name merging."
+  "tailwind-merge": "For conflict-free tailwind class merging."
+  "lucide-react": "For beautiful crisp UI icons."
+
+images: []
+
+notes:
+  - "The app is strictly client-side. No backend APIs are invoked."
+  - "Spinner live preview works by generating HTML/CSS dynamically and injecting a scoped <style> block."
+  - "Design uses dark mode exclusively with vibrant neon accents to match the technical 'builder' aesthetic."
